@@ -29,6 +29,7 @@ public class TeaVMBuilder {
         TeaBuildConfiguration teaBuildConfiguration = new TeaBuildConfiguration();
         teaBuildConfiguration.assetsPath.add(new AssetFileHandle("../assets"));
         teaBuildConfiguration.webappPath = new File("build/dist").getCanonicalPath();
+        teaBuildConfiguration.htmlTitle = "KFS Sokoban pro Kubu";
 
         // Register any extra classpath assets here:
         // teaBuildConfiguration.additionalAssetsClasspathFiles.add("kfs/sokoban/asset.extension");

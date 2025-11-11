@@ -2,7 +2,6 @@ package kfs.sokoban.ui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -19,8 +18,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import kfs.sokoban.KfsMain;
 import kfs.sokoban.World;
-import kfs.sokoban.inp.InputKeysSystem;
-import kfs.sokoban.inp.InputTouchSystem;
+import kfs.sokoban.sys.InputSystem;
 
 public class SokobanScreen extends ScreenAdapter {
 
@@ -55,7 +53,7 @@ public class SokobanScreen extends ScreenAdapter {
 
         uiStage = new Stage(new ScreenViewport());
 
-        InputMultiplexer mux = new InputMultiplexer(uiStage, new InputKeysSystem(world), new InputTouchSystem(world));
+        InputMultiplexer mux = new InputMultiplexer(uiStage, new InputSystem(world));
         Gdx.input.setInputProcessor(mux);
 
         skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
