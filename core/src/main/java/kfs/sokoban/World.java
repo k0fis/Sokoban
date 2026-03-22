@@ -151,6 +151,10 @@ public class World extends KfsWorld {
         this.lock = lock;
     }
 
+    public int getScore() {
+        return getSystem(LevelScoreSystem.class).getScore();
+    }
+
     public Sprite getRuna() {
         return runa;
     }

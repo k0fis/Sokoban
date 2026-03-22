@@ -168,7 +168,12 @@ public class SokobanScreen extends ScreenAdapter {
     }
 
     private void gameOver(boolean win) {
-        kfsGame.setScreen(new LevelDoneScreen(kfsGame, win, lastInfo, map));
+        if (win) {
+            int score = world.getScore();
+            kfsGame.setScreen(new GameOverScreen(kfsGame, score, map));
+        } else {
+            kfsGame.setScreen(new LevelDoneScreen(kfsGame, false, lastInfo, map));
+        }
     }
 
     private String lastInfo = "";

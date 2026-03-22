@@ -33,6 +33,8 @@ public class MainScreen extends BaseScreen {
         TextButton playButton = new TextButton("Play", buttonStyle);
 
         playButton.getColor().a = 0.75f;
+        TextButton leaderboardButton = new TextButton("Leaderboard", buttonStyle);
+        leaderboardButton.getColor().a = 0.75f;
         TextButton helpButton = new TextButton("Info / Help", buttonStyle);
         helpButton.getColor().a = 0.75f;
         TextButton musicButton = new TextButton("Music play", buttonStyle);
@@ -48,6 +50,7 @@ public class MainScreen extends BaseScreen {
         table.defaults().width(buttonWidth).height(buttonHeight).pad(15f);
 
         table.add(playButton).row();
+        table.add(leaderboardButton).row();
         table.add(helpButton).row();
         table.add(musicButton).row();
         table.add(music2Button).row();
@@ -58,6 +61,13 @@ public class MainScreen extends BaseScreen {
         playButton.addListener(e -> {
             if (playButton.isPressed()) {
                 game.setScreen(new LevelSelectScreen(game));
+            }
+            return false;
+        });
+
+        leaderboardButton.addListener(e -> {
+            if (leaderboardButton.isPressed()) {
+                game.setScreen(new LeaderboardScreen(game));
             }
             return false;
         });

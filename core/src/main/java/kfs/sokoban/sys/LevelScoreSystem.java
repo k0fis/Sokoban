@@ -92,6 +92,10 @@ public class LevelScoreSystem implements KfsSystem {
     }
 
 
+    public int getScore() {
+        return Math.max(0, (int)((timeLimit - time) * 10));
+    }
+
     boolean hasCornerDeadlock() {
         for (PositionComponent b : boxes) {
             if (isPosition(b, goals))
